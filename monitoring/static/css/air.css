@@ -1,0 +1,33 @@
+/* air.css */
+
+header {
+    background-color: #e0f7fa;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+.info {
+    margin-bottom: 20px;
+}
+
+.info h2 {
+    color: #00796b;
+}
+
+.data {
+    background-color: #e0f2f1;
+    border: 1px solid #00796b;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #e0f7fa;
+    padding: 20px;
+    text-align: center;
+}

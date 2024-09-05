@@ -1,0 +1,149 @@
+{% extends 'monitoring/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<!--div id="hero-cont">
+    <header>
+        <div class="nav">
+            <div class="logo">
+                <h1>AQ<span>-Index</span></h1>
+            </div>
+            <div class="links">
+                <a href="#">Home</a>
+                <a href="#abt">About</a>
+                <a href="data.html">AQI</a>
+                <a href="#ft">Details</a>
+            </div>
+        </div>
+    </header-->
+
+    <div class="hero-text">
+        <div class="ht">
+            <h1>Air Quality <span>Index...</span></h1>
+            <p>The Air Quality Index (AQI) is simply a numerical scale used to quantify the quality of the air in a particular area...</p>
+            <a href="#aq">CHECK</a>
+        </div>
+        <div class="hi">
+            <img src="{% static 'images/globe 1.png' %}" alt="Globe">
+        </div>
+    </div>
+</div>
+
+<div class="row" style="display: flex; justify-content: center;">
+    <div class="col-sm-3">
+        <div class="rectangle">
+            <a href="monitoring\templates\monitoring\air.html">
+                <button class="rectangle-button">Air</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-sm-3">
+        <div class="rectangle">
+            <a href="noise.html">
+                <button class="rectangle-button">Noise</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="main" id="aq">
+    <div class="cent">
+        <div class="container">
+            <div class="aqi-card">
+                <h1 class="b">AQI for Current Location</h1>
+                <div id="aqi-container"></div>
+            </div>
+        </div>  
+    </div>
+</div>
+
+<div class="aps" id="abt">
+    <div class="aps-h">
+        <div class="aps-ht"><h1>Air Pollution Sources</h1></div>
+        <div class="aps-hr"><hr></div>
+    </div>
+    <div class="aps-i">
+        <img src="{% static 'images/2307.i203.005.S.m004.c13 1.png' %}" alt="Pollution Sources">
+    </div>
+    <div class="aps-2">
+        <div class="c">
+            <h1>Forest Fires</h1>
+            <p>Forest fires unleash a cocktail of harmful pollutants into the air...</p>
+        </div>
+        <div class="c">
+            <h1>Industries</h1>
+            <p>Industries can also have a substantial impact on air quality...</p>
+        </div>
+        <div class="c">
+            <h1>House Fires</h1>
+            <p>House fires can have a localized but significant impact on air quality...</p>
+        </div>
+        <div class="c">
+            <h1>Vehicles</h1>
+            <p>Vehicles are a significant contributor to air pollution...</p>
+        </div>
+    </div>
+</div>
+
+<div class="he">
+    <div class="aps-h1">
+        <div class="aps-hr1"><hr></div><div class="aps-ht1"><h1>Effect on Health</h1></div>
+    </div>
+    <div class="pn">
+        <img src="{% static 'images/2307.i203.005.S.m004.c13 2.png' %}" alt="Health Effects">
+    </div>
+    <div class="ch">
+        <h1>Health related Issues</h1>
+        <p>
+            Air pollution, whether from forest fires, industrial activities, house fires, or vehicle emissions, poses significant health risks to individuals exposed to it. Short-term exposure to high levels of air pollution can lead to immediate health effects such as irritation of the eyes, nose, and throat, exacerbation of respiratory conditions like asthma and chronic bronchitis, and cardiovascular problems such as heart attacks and strokes. Long-term exposure to air pollution has been linked to chronic respiratory diseases, reduced lung function, development of cardiovascular diseases, and even premature death.<br>
+            <br>Particulate matter (PM), especially fine particles like PM2.5, can penetrate deep into the lungs and enter the bloodstream, causing inflammation and oxidative stress in the body. This can lead to a range of health issues, including respiratory infections, aggravated asthma, bronchitis, and lung cancer. Carbon monoxide (CO) can impair the blood's ability to carry oxygen, leading to symptoms like headaches, dizziness, nausea, and, at high levels, even death. Ozone (O3) can cause chest pain, coughing, throat irritation, and worsen existing respiratory conditions.<br>
+            <br>Vulnerable populations such as children, the elderly, pregnant women, and individuals with pre-existing respiratory or cardiovascular conditions are at higher risk of experiencing adverse health effects from air pollution exposure. Therefore, it's crucial to monitor air quality levels, implement pollution control measures, and take steps to reduce exposure to polluted air, such as staying indoors during periods of poor air quality, using air purifiers, and wearing masks when necessary. Additionally, promoting sustainable practices, transitioning to cleaner energy sources, and advocating for policies that address air pollution are essential for protecting public health and mitigating the adverse effects of air pollution on society.
+        </p>
+    </div>
+</div>
+
+<script>
+    const token = '6922459b0c0b0bbc33071f5957c83233671c4962';
+    const apiUrl = `https://api.waqi.info/feed/@11299/?token=6922459b0c0b0bbc33071f5957c83233671c4962`;
+
+    async function fetchAQI() {
+        try {
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+
+            if (data.status === 'ok') {
+                updateAQI(data.data);
+            } else {
+                console.error('Error fetching AQI data:', data);
+            }
+        } catch (error) {
+            console.error('Error fetching AQI data:', error);
+        }
+    }
+
+    function updateAQI(data) {
+        const aqiContainer = document.getElementById('aqi-container');
+        const aqiValue = document.createElement('div');
+        const description = document.createElement('div');
+        const locationName = document.createElement('div');
+
+        aqiValue.classList.add('aqi-value');
+        description.classList.add('description');
+        locationName.classList.add('location');
+
+        aqiValue.textContent = data.aqi;
+        description.textContent = `Dominant Pollutant: ${data.dominentpol}`;
+        locationName.textContent = `Location: ${data.city.name}`;
+
+        aqiContainer.appendChild(aqiValue);
+        aqiContainer.appendChild(description);
+        aqiContainer.appendChild(locationName);
+    }
+
+    fetchAQI();
+</script>
+
+
+{% endblock %}

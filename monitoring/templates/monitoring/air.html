@@ -1,0 +1,29 @@
+{% extends 'monitoring/base.html' %}{% load static %} {%block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/air.css' %}">
+{% endblock extrahead %} {% block content %} 
+
+{% block content %}
+    <header>
+        <h1>Air Quality Monitoring</h1>
+    </header>
+    <main>
+        <section class="info">
+            <h2>Current Air Quality</h2>
+            <div class="data">
+                <p>Location: {{ location }}</p>
+                <p>Air Quality Index (AQI): {{ aqi }}</p>
+                <p>Condition: {{ aqi_condition }}</p>
+            </div>
+            <h2>Current Temperature</h2>
+            <div class="data">
+                <p>Temperature: {{ temperature }} °C</p>
+            </div>
+        </section>
+        <footer>
+            <div id="ft" style="position: relative; text-align: center;">
+                <img src="{% static 'images/Group 3.png' %}" alt="Project Image" style="height: 300px; width: 1500px;">
+                <h2 style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: black; margin: 0;">Project: IoT Smart Environment Monitoring</h2>
+            </div>
+        </footer>
+    </main>
+{% endblock %}

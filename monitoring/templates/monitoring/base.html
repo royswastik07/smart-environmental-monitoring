@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environment Monitoring</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id="hero-cont">
+    <header>
+        <div class="nav">
+            <div class="logo">
+                <h1>AQ<span>-Index</span></h1>
+            </div>
+            <div class="links">
+                <a href="#">Home</a>
+                <a href="#abt">About</a>
+                <a href="data.html">AQI</a>
+                <a href="#ft">Details</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+
+    <footer>
+        <div id="ft" style="position: relative; text-align: center;">
+            <img src="{% static 'images/Group 3.png' %}" alt="Project Image" style="height: 300px; width: 1500px; align-items: center;
+    justify-content: center;">
+            <h2 style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; margin: 0;">Project: IoT Smart Environment Monitoring</h2>
+        </div>
+    </footer>
+    
+</body>
+</html>
