@@ -1,0 +1,17 @@
+{% extends 'monitoring/base.html' %}
+{% load static %}
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/noise.css' %}">
+{% endblock extrahead %}
+{% block content %} 
+    <main class="noise-main">
+        <section class="noise-info">
+            <h2 class="noise-header">Current Noise Levels</h2>
+            <div class="noise-data">
+                <p class="noise-location">Location: {{ location }}</p>
+                <p class="noise-level">Noise Level: {{ noise_level }} dB</p>
+                <p class="noise-condition">Condition: {{ noise_condition }}</p>
+            </div>
+        </section>
+    </main>
+{% endblock %}

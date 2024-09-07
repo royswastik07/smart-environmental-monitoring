@@ -21,7 +21,9 @@
     <div class="hero-text">
         <div class="ht">
             <h1>Air Quality <span>Index...</span></h1>
-            <p>The Air Quality Index (AQI) is simply a numerical scale used to quantify the quality of the air in a particular area...</p>
+            <p>The Air Quality Index (AQI) is simply a numerical scale used to quantify the quality of the air in a particular area, measuring various pollutants such as particulate matter, ozone, carbon monoxide, sulfur dioxide, and nitrogen dioxide. It provides a standardized way to communicate the potential health effects of air pollution to the public, enabling individuals to make informed decisions to protect their health.
+                the AQI typically ranges from 0 to 500, with lower values indicating cleaner air and higher values indicating more polluted air.
+            </p>
             <a href="#aq">CHECK</a>
         </div>
         <div class="hi">
@@ -33,7 +35,7 @@
 <div class="row" style="display: flex; justify-content: center;">
     <div class="col-sm-3">
         <div class="rectangle">
-            <a href="monitoring\templates\monitoring\air.html">
+            <a href="{% url 'air' %}">
                 <button class="rectangle-button">Air</button>
             </a>
         </div>
@@ -41,7 +43,7 @@
 
     <div class="col-sm-3">
         <div class="rectangle">
-            <a href="noise.html">
+            <a href="{% url 'noise' %}">
                 <button class="rectangle-button">Noise</button>
             </a>
         </div>
@@ -70,19 +72,19 @@
     <div class="aps-2">
         <div class="c">
             <h1>Forest Fires</h1>
-            <p>Forest fires unleash a cocktail of harmful pollutants into the air...</p>
+            <p>Forest fires unleash a cocktail of harmful pollutants into the air, including particulate matter, carbon monoxide, and nitrogen oxides, which can drastically degrade air quality. These pollutants not only contribute to elevated AQI levels but also pose significant health risks, particularly for vulnerable populations. </p>
         </div>
         <div class="c">
             <h1>Industries</h1>
-            <p>Industries can also have a substantial impact on air quality...</p>
+            <p>Industries can also have a substantial impact on air quality and the AQI. Industrial activities, such as manufacturing, power generation, and transportation, release various pollutants into the atmosphere, including particulate matter, sulfur dioxide, nitrogen oxides, volatile organic compounds, and heavy metals.</p>
         </div>
         <div class="c">
             <h1>House Fires</h1>
-            <p>House fires can have a localized but significant impact on air quality...</p>
+            <p>House fires can have a localized but significant impact on air quality, particularly in the immediate vicinity of the fire. When a house fire occurs, it releases a range of pollutants into the air, including smoke, carbon monoxide, particulate matter, and volatile organic compounds. These pollutants can severely degrade air quality. </p>
         </div>
         <div class="c">
             <h1>Vehicles</h1>
-            <p>Vehicles are a significant contributor to air pollution...</p>
+            <p>Vehicles are a significant contributor to air pollution and can have a notable impact on air quality and the AQI, especially in urban areas with heavy traffic congestion. The exhaust emissions from vehicles contain various pollutants, including nitrogen oxides, carbon monoxide, volatile organic compounds, and particulate matter. </p>
         </div>
     </div>
 </div>

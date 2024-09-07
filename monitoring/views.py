@@ -7,7 +7,7 @@ import requests
 def index(request):
     return render(request, 'monitoring/index.html')
 
-def air(request):
+def air_view(request):
     # Example static data. Replace this with real API calls.
     location = "Your Area"
     aqi = 45
@@ -27,4 +27,24 @@ def air(request):
         'temperature': temperature,
     }
 
-    return render(request, 'air.html', context)
+    return render(request, 'monitoring/air.html', context)
+
+def noise_view(request):
+    # Example static data. Replace this with real API calls or data retrieval.
+    location = "Your Area"
+    noise_level = 55  # Example noise level in dB
+    noise_condition = "Moderate"
+
+    # For live data, use something like this:
+    # response = requests.get('YOUR_NOISE_API_URL')
+    # data = response.json()
+    # noise_level = data['noise_level']
+    # noise_condition = data['noise_condition']
+
+    context = {
+        'location': location,
+        'noise_level': noise_level,
+        'noise_condition': noise_condition,
+    }
+
+    return render(request, 'monitoring/noise.html', context)

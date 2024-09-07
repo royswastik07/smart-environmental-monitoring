@@ -1,11 +1,5 @@
 /* air.css */
 
-header {
-    background-color: #e0f7fa;
-    padding: 20px;
-    text-align: center;
-}
-
 main {
     padding: 20px;
 }
@@ -26,8 +20,3 @@ main {
     margin-bottom: 20px;
 }
 
-footer {
-    background-color: #e0f7fa;
-    padding: 20px;
-    text-align: center;
-}

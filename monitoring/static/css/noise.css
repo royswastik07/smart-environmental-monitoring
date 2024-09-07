@@ -1,0 +1,25 @@
+/* noise.css */
+
+.noise-main {
+    padding: 20px;
+}
+
+.noise-info {
+    margin-bottom: 20px;
+}
+
+.noise-header {
+    color: #004d40;
+}
+
+.noise-data {
+    background-color: #e0f2f1;
+    border: 1px solid #004d40;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.noise-location, .noise-level, .noise-condition {
+    color: #00796b;
+}

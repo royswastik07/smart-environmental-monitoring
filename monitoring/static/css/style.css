@@ -30,6 +30,7 @@ body{
     height: 100vh;
     padding: 0px 80px;
 }
+
 header{
     
     padding: 50px 0px;
@@ -58,6 +59,7 @@ header{
     align-items: center;
     justify-content: space-between;
 }
+
 .ht{
     width: 40%;
 }
@@ -70,6 +72,7 @@ header{
 .ht p{
     margin-top: 10px;
     color: #807D7D;
+    
 }
 .ht a{
     display: inline-block;
@@ -181,14 +184,14 @@ hr{
     margin: 20px 0px;
 }
 
-/*
-footer{
+
+/*footer{
     margin-top: 100px;
     width: 100%;
     height: 400px;
     text-align: center;
     color: white;
-    background-image: url(Group\ 3.png);
+    background-image:"{% static 'images/Group 3.png' %}";
     display: flex;
     align-items: center;
     justify-content: center;
@@ -196,8 +199,8 @@ footer{
 footer h1{
     font-weight: 400;
     font-size: 20px;
-}
-*/
+}*/
+
 
 .main{
     padding: 150px 80px;
@@ -299,69 +302,4 @@ iframe{
     font-size: 24px;
     line-height: 26px;
 } 
-
-
-/*.circle {
-    margin: 70px;
-    display: inline-block;
-    text-align: center;
-    width: 250px;            
-    height: 250px;
-    border-radius: 50%;      
-    border: 2px solid #fff;  
-    position: relative;
-    background-color: transparent;
-    overflow: hidden;
-}
-
-.circle-button {
-    background-color: rgb(131, 182, 119);
-    border: none;
-    color: #010101;
-    font-size: 300%;        
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;     
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.circle-button:hover {
-    color: #fff;
-    background: #b9b951;    
-}
-
-.circle a {
-    text-decoration: none;
-}
-
-.circle a:hover .circle-button {
-    background: #e3e344;
-}
-
-.circle::after {
-    position: absolute;
-    z-index: -1;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    transform: scale(.5);
-    transition: all .5s;
-}
-
-.circle:hover::after {
-    background: #e3e344;
-    transform: scale(.9);
-}
-
-.circle p {
-    font-size: 24px;
-    line-height: 26px;
-}*/
-
 
