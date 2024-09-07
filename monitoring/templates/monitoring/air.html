@@ -2,18 +2,39 @@
     <link rel="stylesheet" href="{% static 'css/air.css' %}">   
 {% endblock extrahead %} {% block content %} 
 
-    <main>
-        <section class="info">
-            <h2>Current Air Quality</h2>
-            <div class="data">
-                <p>Location: {{ location }}</p>
-                <p>Air Quality Index (AQI): {{ aqi }}</p>
-                <p>Condition: {{ aqi_condition }}</p>
+<main>
+    <div class="container">
+        <header>
+            <h1>Air Quality & Temperature Monitoring</h1>
+            <p>Location: <span id="location">Your Area</span></p>
+        </header>
+
+        <section class="dashboard">
+            <div class="card air-quality">
+                <h2>Air Quality</h2>
+                <p>PM2.5: <span id="pm25">--</span> µg/m³</p>
+                <p>PM10: <span id="pm10">--</span> µg/m³</p>
+                <p>O3: <span id="o3">--</span> µg/m³</p>
             </div>
-            <h2>Current Temperature</h2>
-            <div class="data">
-                <p>Temperature: {{ temperature }} °C</p>
+            <div class="card temperature">
+                <h2>Temperature</h2>
+                <p>Current: <span id="temperature">--</span> °C</p>
+                <p>Humidity: <span id="humidity">--</span> %</p>
+            </div>
+            <div class="card status">
+                <h2>Status</h2>
+                <p>Air Quality Index (AQI): <span id="aqi">--</span></p>
+                <p>Status: <span id="status">Good</span></p>
             </div>
         </section>
-    </main>
+    </div>
+
+    <script>
+        // This is where you'll fetch the live data using JavaScript or Django
+        // Example:
+        // document.getElementById('pm25').innerText = "45";
+        // document.getElementById('temperature').innerText = "26";
+    </script>
+</main>
+
 {% endblock %}

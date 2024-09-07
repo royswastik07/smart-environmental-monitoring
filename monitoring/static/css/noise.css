@@ -1,25 +1,89 @@
-/* noise.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
 
-.noise-main {
+header {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+p {
+    margin: 5px 0;
+}
+
+main {
     padding: 20px;
 }
 
-.noise-info {
+/* Noise Level Section */
+.noise-level {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
     margin-bottom: 20px;
 }
 
-.noise-header {
-    color: #004d40;
+.noise-level h2 {
+    margin-bottom: 15px;
 }
 
-.noise-data {
-    background-color: #e0f2f1;
-    border: 1px solid #004d40;
-    border-radius: 5px;
-    padding: 10px;
+.noise-data h3 {
+    font-size: 48px;
+    color: #E74C3C;
+    margin: 0;
+}
+
+.noise-data p {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Dashboard Section */
+.dashboard {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard h2 {
+    text-align: center;
     margin-bottom: 20px;
 }
 
-.noise-location, .noise-level, .noise-condition {
-    color: #00796b;
+.dashboard-content {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
 }
+
+.dashboard-card {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    width: 30%;
+}
+
+.dashboard-card h3 {
+    margin: 10px 0;
+    color: #4CAF50;
+}
+
+.dashboard-card p {
+    font-size: 24px;
+    color: #555;
+}
+

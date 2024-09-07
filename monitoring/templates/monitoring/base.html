@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Environment Monitoring</title>
-    {% load static %}
+    {% load static %} 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {%block extrahead %}
+    {% endblock extrahead %}
 </head>
 <body>
     <div id="hero-cont">
