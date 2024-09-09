@@ -48,3 +48,9 @@ def noise_view(request):
     }
 
     return render(request, 'monitoring/noise.html', context)
+
+def data_view(request):
+    return render(request, 'monitoring/data.html')
+
+def about_us(request):
+    return render(request, 'monitoring/aboutus.html')

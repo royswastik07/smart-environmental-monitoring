@@ -71,8 +71,7 @@ header{
 }
 .ht p{
     margin-top: 10px;
-    color: #807D7D;
-    
+    color: #807D7D; 
 }
 .ht a{
     display: inline-block;
@@ -233,9 +232,7 @@ iframe{
 }
 
 /*Button Animation*/
-
-  
-  .rectangle {
+.rectangle {
     margin: 120px;
     display: inline-block;
     padding: 16px;
@@ -249,53 +246,31 @@ iframe{
 }
 
 .rectangle-button {
-    background-color: rgb(131, 182, 119);
+    background: linear-gradient(45deg, #4CAF50, #66BB6A);
     border: none;
-    color: rgba(2, 2, 2, 0.888);;
-    font-size: 300%;        
+    color: rgba(2, 2, 2, 0.888);
+    font-size: 300%;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
     width: 100%;
     height: 100%;
+    transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
-    display: flex;
     justify-content: center;
     align-items: center;
-    border:  rgb(0, 0, 0);
-    border-radius: 2%;
+    border: rgb(0, 0, 0);
+    border-radius: 50px;
 }
 
+
 .rectangle-button:hover {
-    color: #fff;
-    background: #e3e344;  
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     
 }
 
-.rectangle a {
-    text-decoration: none;
-}
-
-.rectangle a:hover .rectangle-button {
-    background: #e3e344;
-    width: 100%;
-    height: 100%; 
-}
-
-.rectangle::after {
-    position: absolute;
-    z-index: -1;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform: scale(.5);
-    transition: all .5s;
-}
-
-.rectangle:hover::after {
-    background: #e3e344;
-    transform: scale(.9);
-    width: 100%;
-    height: 100%; 
+.rectangle-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .rectangle p {

@@ -1,0 +1,22 @@
+main {
+    padding: 30px;
+    font-family: "Roboto", sans-serif;
+}
+
+.about, .objective {
+    background-color: #e0f7fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.about h2, .objective h2 {
+    color: #00796b;
+    font-size: 28px;
+}
+
+.about p, .objective p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #004d40;
+}

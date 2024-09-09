@@ -1,0 +1,20 @@
+{% extends 'monitoring/base.html' %}
+{% load static %}
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/aboutus.css' %}">
+{% endblock extrahead %}
+{% block content %}
+
+<main>
+    <section class="about">
+        <h2>About Us</h2>
+        <p>This IoT project is developed by MSc Data Science students, Swastik Roy and Stuty Das from Christ University. The goal is to create an environmental monitoring system that tracks air quality, noise levels, and other environmental factors to provide real-time data for better understanding and action.</p>
+    </section>
+
+    <section class="objective">
+        <h2>Project Objective</h2>
+        <p>The primary objective of this project is to utilize IoT technology to monitor and report environmental factors, such as air quality and noise pollution. This system provides real-time data to help individuals and organizations make informed decisions regarding environmental sustainability and public health.</p>
+    </section>
+</main>
+
+{% endblock %}
