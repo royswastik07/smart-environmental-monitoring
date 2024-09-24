@@ -7,5 +7,7 @@ urlpatterns = [
     path('noise/', views.noise_view, name="noise"),
     path('data.html', views.data_view, name='data'),
     path('aboutus/', views.about_us, name='aboutus'),
+    path('login.html', views.login, name='login'),
+
 
 ]

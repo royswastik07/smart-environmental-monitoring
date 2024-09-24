@@ -58,10 +58,11 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
+
 }
 
 .ht{
-    width: 40%;
+    width:40%;
 }
 .ht h1{
     font-size: 60px;
@@ -70,8 +71,10 @@ header{
     color: #0B9108;
 }
 .ht p{
+    font-size : 20px;
     margin-top: 10px;
     color: #807D7D; 
+    text-align: justify;
 }
 .ht a{
     display: inline-block;
@@ -202,7 +205,7 @@ footer h1{
 
 
 .main{
-    padding: 150px 80px;
+    padding: 0px 80px;
     display: flex;
     align-items: center;
     text-align: center;

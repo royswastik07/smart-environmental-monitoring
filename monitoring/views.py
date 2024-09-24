@@ -54,3 +54,6 @@ def data_view(request):
 
 def about_us(request):
     return render(request, 'monitoring/aboutus.html')
+
+def login(request):
+    return render(request, 'monitoring/login.html')
