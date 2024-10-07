@@ -3,6 +3,8 @@
 {% load static %}
 
 {% block content %}
+<body class="page-with-bg">
+    
 
     <div class="hero-text">
         <div class="ht">
@@ -12,9 +14,9 @@
             </p>
             <a href="#aq">CHECK</a>
         </div>
-        <div class="hi">
+        <!--div class="hi">
             <img src="{% static 'images\globe11-removebg-preview.png' %}" alt="Globe">
-        </div>
+        </div-->
     </div>
 </div>
 
@@ -44,51 +46,6 @@
                 <div id="aqi-container"></div>
             </div>
         </div>  
-    </div>
-</div>
-
-<div class="aps" id="abt">
-    <div class="aps-h">
-        <div class="aps-ht"><h1>Air Pollution Sources</h1></div>
-        <div class="aps-hr"><hr></div>
-    </div>
-    <div class="aps-i">
-        <img src="{% static 'images/2307.i203.005.S.m004.c13 1.png' %}" alt="Pollution Sources">
-    </div>
-    <div class="aps-2">
-        <div class="c">
-            <h1>Forest Fires</h1>
-            <p>Forest fires unleash a cocktail of harmful pollutants into the air, including particulate matter, carbon monoxide, and nitrogen oxides, which can drastically degrade air quality. These pollutants not only contribute to elevated AQI levels but also pose significant health risks, particularly for vulnerable populations. </p>
-        </div>
-        <div class="c">
-            <h1>Industries</h1>
-            <p>Industries can also have a substantial impact on air quality and the AQI. Industrial activities, such as manufacturing, power generation, and transportation, release various pollutants into the atmosphere, including particulate matter, sulfur dioxide, nitrogen oxides, volatile organic compounds, and heavy metals.</p>
-        </div>
-        <div class="c">
-            <h1>House Fires</h1>
-            <p>House fires can have a localized but significant impact on air quality, particularly in the immediate vicinity of the fire. When a house fire occurs, it releases a range of pollutants into the air, including smoke, carbon monoxide, particulate matter, and volatile organic compounds. These pollutants can severely degrade air quality. </p>
-        </div>
-        <div class="c">
-            <h1>Vehicles</h1>
-            <p>Vehicles are a significant contributor to air pollution and can have a notable impact on air quality and the AQI, especially in urban areas with heavy traffic congestion. The exhaust emissions from vehicles contain various pollutants, including nitrogen oxides, carbon monoxide, volatile organic compounds, and particulate matter. </p>
-        </div>
-    </div>
-</div>
-
-<div class="he">
-    <div class="aps-h1">
-        <div class="aps-hr1"><hr></div><div class="aps-ht1"><h1>Effect on Health</h1></div>
-    </div>
-    <div class="pn">
-        <img src="{% static 'images/2307.i203.005.S.m004.c13 2.png' %}" alt="Health Effects">
-    </div>
-    <div class="ch">
-        <h1>Health related Issues</h1>
-        <p>
-            Air pollution, whether from forest fires, industrial activities, house fires, or vehicle emissions, poses significant health risks to individuals exposed to it. Short-term exposure to high levels of air pollution can lead to immediate health effects such as irritation of the eyes, nose, and throat, exacerbation of respiratory conditions like asthma and chronic bronchitis, and cardiovascular problems such as heart attacks and strokes. Long-term exposure to air pollution has been linked to chronic respiratory diseases, reduced lung function, development of cardiovascular diseases, and even premature death.<br>
-            <br>Particulate matter (PM), especially fine particles like PM2.5, can penetrate deep into the lungs and enter the bloodstream, causing inflammation and oxidative stress in the body. This can lead to a range of health issues, including respiratory infections, aggravated asthma, bronchitis, and lung cancer. Carbon monoxide (CO) can impair the blood's ability to carry oxygen, leading to symptoms like headaches, dizziness, nausea, and, at high levels, even death. Ozone (O3) can cause chest pain, coughing, throat irritation, and worsen existing respiratory conditions.<br>
-            <br>Vulnerable populations such as children, the elderly, pregnant women, and individuals with pre-existing respiratory or cardiovascular conditions are at higher risk of experiencing adverse health effects from air pollution exposure. Therefore, it's crucial to monitor air quality levels, implement pollution control measures, and take steps to reduce exposure to polluted air, such as staying indoors during periods of poor air quality, using air purifiers, and wearing masks when necessary. Additionally, promoting sustainable practices, transitioning to cleaner energy sources, and advocating for policies that address air pollution are essential for protecting public health and mitigating the adverse effects of air pollution on society.
-        </p>
     </div>
 </div>
 
@@ -133,5 +90,5 @@
     fetchAQI();
 </script>
 
-
+</body>
 {% endblock %}
