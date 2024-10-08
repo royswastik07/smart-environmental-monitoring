@@ -1,17 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
 :root {
-    /Customize colors/
+    /*Customize colors*/
     --overlay-color: green;
     --button-color: rgb(15, 104, 19);
     --button-border-color: rgb(42, 137, 47);
-    --overlay-gradiant1: rgb(29, 215, 39);
-    --overlay-gradiant2: rgb(37, 205, 45);
+    --overlay-gradiant1: rgb(13, 152, 20);
+    --overlay-gradiant2: rgb(12, 152, 20);
 }
-
-
-
-
 
 * {
     box-sizing: border-box;

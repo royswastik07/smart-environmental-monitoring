@@ -4,6 +4,7 @@
 
 {% block content %}
 <body class="page-with-bg">
+<div class="wt-bg">
     
 
     <div class="hero-text">
@@ -17,37 +18,34 @@
         <!--div class="hi">
             <img src="{% static 'images\globe11-removebg-preview.png' %}" alt="Globe">
         </div-->
-    </div>
-</div>
-
-<div class="row" style="display: flex; justify-content: center;">
-    <div class="col-sm-3">
-        <div class="rectangle">
-            <a href="{% url 'air' %}">
-                <button class="rectangle-button">Air</button>
-            </a>
-        </div>
-    </div>
-
-    <div class="col-sm-3">
-        <div class="rectangle">
-            <a href="{% url 'noise' %}">
-                <button class="rectangle-button">Noise</button>
-            </a>
-        </div>
-    </div>
-</div>
-
-<div class="main" id="aq">
-    <div class="cent">
-        <div class="container">
-            <div class="aqi-card">
-                <h1 class="b">AQI for Current Location</h1>
-                <div id="aqi-container"></div>
+        <div style="display: flex; flex-direction: column;">
+            <div class="row" style="display: flex; justify-content: center;">
+                <div class="rectangle">
+                    <a href="{% url 'air' %}">
+                        <button class="rectangle-button">Air</button>
+                    </a>
+                </div>
+            
+                <div class="rectangle">
+                    <a href="{% url 'noise' %}">
+                        <button class="rectangle-button">Noise</button>
+                    </a>
+                </div>
             </div>
-        </div>  
+            <div class="main" id="aq">
+                <div class="cent">
+                    <div class="container">
+                        <div class="aqi-card">
+                            <h1 class="b">AQI for Current Location</h1>
+                            <div id="aqi-container"></div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+
+
 
 <script>
     const token = '6922459b0c0b0bbc33071f5957c83233671c4962';
@@ -89,6 +87,6 @@
 
     fetchAQI();
 </script>
-
+</div>
 </body>
 {% endblock %}
