@@ -25,6 +25,12 @@
                         <button class="rectangle-button">Air</button>
                     </a>
                 </div>
+
+                <div class="rectangle">
+                    <a href="{% url 'data' %}">
+                        <button class="rectangle-button">AQI</button>
+                    </a>
+                </div>
             
                 <div class="rectangle">
                     <a href="{% url 'noise' %}">
@@ -32,7 +38,7 @@
                     </a>
                 </div>
             </div>
-            <div class="main" id="aq">
+            {% comment %} <div class="main" id="aq">
                 <div class="cent">
                     <div class="container">
                         <div class="aqi-card">
@@ -41,7 +47,7 @@
                         </div>
                     </div>  
                 </div>
-            </div>
+            </div> {% endcomment %}
         </div>
     </div>
 

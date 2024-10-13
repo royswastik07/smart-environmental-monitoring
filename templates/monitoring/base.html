@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Environment Monitoring</title>
     {% load static %} 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    {%block extrahead %}
+    {% block extrahead %}
     {% endblock extrahead %}
 </head>
 <body>
@@ -19,16 +21,24 @@
                 <div class="links">
                     <a href="{% url 'index' %}">Home</a>
                     <a href="{% url 'aboutus' %}">About Us</a>
-                    <a href="{% url 'data' %}">AQI</a>
-                    <a href="#ft">Details</a>
-                    <a href="{% url 'login' %}">Login</a>
+                    {% comment %} <a href="{% url 'data' %}">AQI</a> {% endcomment %}
+                    <a href="{% url 'index' %}">Details</a>
+                    
+                    <!-- Conditional Logic for Login/Logout -->
+                    {% if user.is_authenticated %}
+                        <form action="{% url 'logout' %}" method="post" style="display: inline;">
+                            {% csrf_token %}
+                            <a href="#" class="links" onclick="event.preventDefault(); this.closest('form').submit();">Logout</a>
+                        </form>
+                    {% else %}
+                        <a href="{% url 'login' %}" class="links">Login</a>
+                    {% endif %}
                 </div>
             </div>
         </header>
 
         <main>
             {% block content %}
-
             {% endblock %}
         </main>
 

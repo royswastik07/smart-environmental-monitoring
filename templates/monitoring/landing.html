@@ -1,0 +1,46 @@
+{% extends 'monitoring/base.html' %}
+
+{% block content %}
+<body class="page-with-bg">
+    <div class="wt-bg">
+        <div class="hero-text" style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 70vh; padding: 20px;">  <!-- Adjusted min-height and added padding -->
+            <div class="ht" style="text-align: center;">  <!-- Center text within the container -->
+                <h1>Welcome to AQ<span>-Index</span></h1>
+                <p>Monitor air quality and environmental conditions in real-time. Use our app to stay informed about air quality and noise levels in your area, so you can make healthier choices for yourself and your community.</p>
+            </div>
+        </div>
+        
+        <div class="features">
+            <h2>Features</h2>
+            <div class="card-container">
+                <div class="card">
+                    <i class="fas fa-smog fa-3x"></i>
+                    <h3>Real-Time Monitoring</h3>
+                    <p>Stay updated with real-time data on air quality and pollution levels in your area.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-volume-up fa-3x"></i>
+                    <h3>Noise Level Tracking</h3>
+                    <p>Monitor noise levels in your surroundings to ensure a peaceful environment.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-chart-line fa-3x"></i>
+                    <h3>Historical Data</h3>
+                    <p>Access historical data to understand air quality trends and make informed decisions.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-users fa-3x"></i>
+                    <h3>Community Insights</h3>
+                    <p>Join a community of users and share insights about environmental conditions.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="call-to-action" style="text-align: center;">  <!-- Centering call to action -->
+            <h2>Join Us Today!</h2>
+            <p>Sign up now to access personalized insights and stay informed about your environment.</p>
+            <a href="{% url 'login' %}" class="button">Get Started</a>
+        </div>
+    </div>
+</body>
+{% endblock %}
