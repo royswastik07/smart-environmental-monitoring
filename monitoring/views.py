@@ -3,7 +3,34 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib import messages 
 from .forms import CustomUserCreationForm
+from django.contrib.auth.decorators import login_required
 
+@login_required
+def profile_view(request):
+    return render(request, 'monitoring/profile.html', {'user': request.user})
+
+def admin_dashboard(request):
+    return render(request, 'monitoring/admin_dashboard.html')
+
+@login_required
+def room1(request):
+    return render(request, 'monitoring/room/room1.html')
+
+@login_required
+def room2(request):
+    return render(request, 'monitoring/room/room2.html')
+
+@login_required
+def room3(request):
+    return render(request, 'monitoring/room/room3.html')
+
+@login_required
+def room4(request):
+    return render(request, 'monitoring/room/room4.html')
+
+@login_required
+def room5(request):
+    return render(request, 'monitoring/room/room5.html')
 
 # Air View
 def air_view(request):
@@ -54,10 +81,12 @@ def landing_page(request):
     return render(request, 'monitoring/landing.html')  # Render the landing page
 
 # Index Page View (for logged-in users)
+@login_required
 def index(request):
     if not request.user.is_authenticated:
         return redirect('login')  # Redirect to login if user is not authenticated
     return render(request, 'monitoring/index.html')
+
 
 # Authentication View (Register and Login)
 def login_view(request):
@@ -66,20 +95,27 @@ def login_view(request):
             form = CustomUserCreationForm(request.POST)
             if form.is_valid():
                 user = form.save()
-                messages.success(request, 'Registration successful! Please log in.')  # Flash success message
-                return redirect('login')  # Redirect to login after successful registration
+                messages.success(request, 'Registration successful! Please log in.')
+                return redirect('login')
             else:
-                messages.error(request, 'Registration failed. Please check your details.')  # Flash error message
-        
+                messages.error(request, 'Registration failed. Please check your details.')
+
         elif 'login' in request.POST:  # Check if the login form is submitted
             form = AuthenticationForm(request, data=request.POST)
             if form.is_valid():
                 username = form.cleaned_data.get('username')
                 password = form.cleaned_data.get('password')
+
                 user = authenticate(username=username, password=password)
                 if user is not None:
-                    login(request, user)
-                    return redirect('index')  # Redirect to index after successful login
+                    # Check if user is admin (superuser) or has the specific username
+                    if user.is_superuser or user.username == 'swastik_r2002':
+                        login(request, user)
+                        return redirect('admin_dashboard')  # Redirect to admin dashboard
+                    else:
+                        # Regular user login
+                        login(request, user)
+                        return redirect('index')  # Redirect to index for regular users
                 else:
                     messages.error(request, "Invalid username or password.")
             else:
@@ -87,5 +123,4 @@ def login_view(request):
     else:
         form = CustomUserCreationForm()  # Initialize the registration form
 
-    # Render the same template with both forms
     return render(request, 'monitoring/login.html', {'form': form})

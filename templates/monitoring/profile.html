@@ -1,0 +1,96 @@
+{% extends 'monitoring/base.html' %}
+
+{% block content %}
+<body class="page-with-bg">
+    <div class="wt-bg">  <!-- Background wrapper -->
+        
+        <!-- Profile content inside the background wrapper -->
+        <div class="hero-text">
+            <div class="profile-container">
+                <h2>My Profile</h2>
+                <div class="profile-info">
+                    <div class="profile-field">
+                        <strong>Username:</strong>
+                        <span>{{ user.username }}</span>
+                    </div>
+                    <div class="profile-field">
+                        <strong>First Name:</strong>
+                        <span>{{ user.first_name }}</span>
+                    </div>
+                    <div class="profile-field">
+                        <strong>Last Name:</strong>
+                        <span>{{ user.last_name }}</span>
+                    </div>
+                    <div class="profile-field">
+                        <strong>Email:</strong>
+                        <span>{{ user.email }}</span>
+                    </div>
+                    <div class="profile-field">
+                        <strong>Phone Number:</strong>
+                        <span>{{ user.phone_number }}</span>
+                    </div>
+                    <div class="profile-field">
+                        <strong>Date of Birth:</strong>
+                        <span>{{ user.dob }}</span>
+                    </div>
+                    <div class="profile-field">
+                        <strong>Gender:</strong>
+                        <span>{{ user.gender }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<style>
+    .profile-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: rgba(245, 245, 245, 0.9); /* Slight transparency */
+        border-radius: 8px;
+        color: #333;
+    }
+
+    .profile-container h2 {
+        text-align: center;
+        color: #444;
+        margin-bottom: 20px;
+    }
+
+    .profile-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profile-field {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .profile-field strong {
+        color: #555;
+    }
+
+    .edit-profile-btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        margin-top: 20px;
+        background-color: #333;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .edit-profile-btn:hover {
+        background-color: #555;
+    }
+</style>
+
+{% endblock %}

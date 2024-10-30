@@ -27,21 +27,27 @@
 
         <!-- Sign Up Form -->
         <div class="form-container sign-up-container">
-            <form action="{% url 'login' %}" method="post">  <!-- Point to the combined view -->
+            <form action="{% url 'login' %}" method="post">
                 {% csrf_token %}
                 <h1>Create Account</h1>
                 <input type="text" name="username" placeholder="Username" required />
-                <input type="email" name="email" placeholder="eg:user@christuniversity.in" required />
-                <select id="userType" name="usertype" class="input" required>
-                    <option disabled selected>User Type</option>
-                    <option value="user">User</option>
-                    <option value="staff">Staff</option>
+                <input type="email" name="email" placeholder="Email" required />
+                <input type="text" name="first_name" placeholder="First Name" required />
+                <input type="text" name="last_name" placeholder="Last Name" required />
+                <input type="text" name="phone_number" placeholder="Phone Number" required />
+                <input type="date" name="dob" placeholder="Date of Birth" required />
+                <select name="gender" class="input" required>
+                    <option disabled selected>Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
                 </select>
-                <input type="password" name="password1" placeholder="Password" required />  <!-- Ensure correct naming -->
-                <input type="password" name="password2" placeholder="Confirm Password" required />  <!-- Ensure correct naming -->
-                <button type="submit" name="register">Sign Up</button>  <!-- Add name attribute -->
+                <input type="password" name="password1" placeholder="Password" required />
+                <input type="password" name="password2" placeholder="Confirm Password" required />
+                <button type="submit" name="register">Sign Up</button>
             </form>
         </div>
+        
 
         <!-- Sign In Form -->
         <div class="form-container sign-in-container">

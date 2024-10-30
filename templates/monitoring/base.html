@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Environment Monitoring</title>
     {% load static %} 
@@ -21,15 +21,33 @@
                 <div class="links">
                     <a href="{% url 'index' %}">Home</a>
                     <a href="{% url 'aboutus' %}">About Us</a>
-                    {% comment %} <a href="{% url 'data' %}">AQI</a> {% endcomment %}
                     <a href="{% url 'index' %}">Details</a>
-                    
-                    <!-- Conditional Logic for Login/Logout -->
+
+                    <!-- Room Dropdown -->
+                    <div class="dropdown">
+                        <a href="#" class="dropbtn">Room</a>
+                        <div class="dropdown-content">
+                            <a href="{% url 'room1' %}">Room 1</a>
+                            <a href="{% url 'room2' %}">Room 2</a>
+                            <a href="{% url 'room3' %}">Room 3</a>
+                            <a href="{% url 'room4' %}">Room 4</a>
+                            <a href="{% url 'room5' %}">Room 5</a>
+                        </div>
+                    </div>
+
                     {% if user.is_authenticated %}
                         <form action="{% url 'logout' %}" method="post" style="display: inline;">
                             {% csrf_token %}
                             <a href="#" class="links" onclick="event.preventDefault(); this.closest('form').submit();">Logout</a>
                         </form>
+
+                        <a href="{% url 'profile' %}" class="profile-icon">
+                            {% if user.profile.image %}
+                                <img src="{{ user.profile.image.url }}" alt="Profile" class="profile-pic">
+                            {% else %}
+                                <img src="{% static 'images/default-profile.png' %}" alt="Profile" class="profile-pic">
+                            {% endif %}
+                        </a>
                     {% else %}
                         <a href="{% url 'login' %}" class="links">Login</a>
                     {% endif %}
@@ -50,10 +68,61 @@
                     color: white;
                     padding: 20px;
                 }
-        
                 footer h1 {
                     font-weight: 400;
                     font-size: 20px;
+                }
+
+                .profile-icon {
+                    display: inline-block;
+                    margin-left: 15px;
+                    vertical-align: middle;
+                }
+                .profile-pic {
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    border: 2px solid white;
+                }
+                .links a {
+                    color: white;
+                    text-decoration: none;
+                    padding: 0 10px;
+                }
+                .links a:hover {
+                    text-decoration: underline;
+                }
+
+                /* Dropdown styling */
+                .dropdown {
+                    position: relative;
+                    display: inline-block;
+                }
+                .dropbtn {
+                    color: white;
+                    text-decoration: none;
+                    padding: 0 10px;
+                }
+                .dropdown-content {
+                    display: none;
+                    position: absolute;
+                    background-color: #333;
+                    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                    z-index: 1;
+                    min-width: 100px;
+                }
+                .dropdown-content a {
+                    color: white;
+                    padding: 10px;
+                    text-decoration: none;
+                    display: block;
+                }
+                .dropdown-content a:hover {
+                    background-color: #555;
+                }
+                .dropdown:hover .dropdown-content {
+                    display: block;
                 }
             </style>
             <div id="ft">

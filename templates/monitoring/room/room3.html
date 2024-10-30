@@ -1,0 +1,51 @@
+{% extends 'monitoring/base.html' %}
+
+{% block content %}
+<body class="page-with-bg">
+<div class="wt-bg">
+    <div class="room-container">
+        <h2>Room 3 Monitoring</h2>
+        <p>Welcome to Room 3. Here you can view environmental metrics and status updates for this room.</p>
+
+        <!-- Example data section -->
+        <div class="room-stats">
+            <h3>Current Status</h3>
+            <ul>
+                <li>Temperature: <span>23°C</span></li>
+                <li>Humidity: <span>47%</span></li>
+                <li>Air Quality Index: <span>Good</span></li>
+                <li>CO₂ Level: <span>410 ppm</span></li>
+            </ul>
+        </div>
+
+        <!-- Placeholder for real-time data or charts -->
+        <div class="data-visualization">
+            <h3>Data Visualization</h3>
+            <p>Chart or real-time data feed will be displayed here.</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .room-container {
+        color: white;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .room-stats ul {
+        list-style-type: none;
+        padding: 0;
+        font-size: 1.1em;
+    }
+    .room-stats li {
+        margin: 10px 0;
+    }
+    .data-visualization {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #2e2e2e;
+        border-radius: 8px;
+    }
+</style>
+</body>
+{% endblock %}

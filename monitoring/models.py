@@ -8,6 +8,9 @@ class CustomUser(AbstractUser):
         ('staff', 'Staff'),
     )
     usertype = models.CharField(max_length=10, choices=USER_TYPE_CHOICES, default='user')
+    phone_number = models.CharField(max_length=15, blank=True, null=True)
+    dob = models.DateField(blank=True, null=True)
+    gender = models.CharField(max_length=10, choices=[('male', 'Male'), ('female', 'Female'), ('other', 'Other')], blank=True, null=True)
 
     groups = models.ManyToManyField(
         Group,
