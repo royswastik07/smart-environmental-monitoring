@@ -1,12 +1,15 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="{% static 'css/admin_dashboard.css' %}">
+    
 </head>
+
 <body>
     <div class="dashboard-container">
         <!-- Sidebar -->
@@ -14,7 +17,7 @@
             <h2>Admin Dashboard</h2>
             <ul>
                 <li><a href="{% url 'admin_dashboard' %}">Overview</a></li>
-                <li><a href="#">User Management</a></li>
+                <li><a href="{% url 'user_management' %}">User Management</a></li>
                 <li><a href="#">Analytics</a></li>
                 <li><a href="#">Settings</a></li>
                 <li><a href="{% url 'logout' %}">Logout</a></li>
@@ -35,11 +38,11 @@
                     <p>{{ total_users }}</p>
                 </div>
                 <div class="stat-card">
-                    <h3>New Signups</h3>
+                    <h3>New Signups (Last 7 Days)</h3>
                     <p>{{ new_signups }}</p>
                 </div>
                 <div class="stat-card">
-                    <h3>Active Sessions</h3>
+                    <h3>Active Sessions (Last 24 Hours)</h3>
                     <p>{{ active_sessions }}</p>
                 </div>
             </section>
@@ -48,14 +51,16 @@
             <section class="recent-activity">
                 <h2>Recent Activity</h2>
                 <ul>
-                    {% for activity in recent_activities %}
-                    <li>{{ activity }}</li>
+                    {% for user in recent_activities %}
+                    <li>{{ user.username }} logged in at {{ user.last_login|date:"Y-m-d H:i" }}</li>
                     {% empty %}
                     <li>No recent activities found.</li>
                     {% endfor %}
                 </ul>
             </section>
         </main>
+
     </div>
 </body>
+
 </html>

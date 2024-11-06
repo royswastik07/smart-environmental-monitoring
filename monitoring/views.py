@@ -1,16 +1,72 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib import messages 
 from .forms import CustomUserCreationForm
 from django.contrib.auth.decorators import login_required
+from django.utils import timezone
+from .models import CustomUser
+
+@login_required
+def user_management(request):
+    users = CustomUser.objects.all()
+    context = {'users': users}
+    return render(request, 'monitoring/user_management.html', context)
+
+@login_required
+def admin_dashboard(request):
+    # Existing stats
+    total_users = CustomUser.objects.count()
+    new_signups = CustomUser.objects.filter(date_joined__gte=timezone.now() - timezone.timedelta(days=7)).count()
+    active_sessions = CustomUser.objects.filter(last_login__gte=timezone.now() - timezone.timedelta(days=1)).count()
+
+    # Get all users for User Management section
+    users = CustomUser.objects.all()
+
+    context = {
+        'total_users': total_users,
+        'new_signups': new_signups,
+        'active_sessions': active_sessions,
+        'recent_activities': CustomUser.objects.order_by('-last_login')[:5],
+        'users': users,
+    }
+
+    return render(request, 'monitoring/admin_dashboard.html', context)
+
+@login_required
+def add_user(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        phone_number = request.POST.get('phone_number')
+        
+        if username and email and phone_number:
+            new_user = CustomUser.objects.create(
+                username=username,
+                email=email,
+                phone_number=phone_number
+            )
+            new_user.set_password('default_password')  # Optionally set a default password
+            new_user.save()
+            messages.success(request, 'New user added successfully.')
+        else:
+            messages.error(request, 'Please fill out all fields.')
+        return redirect('user_management')
+
+
+@login_required
+def delete_user(request, user_id):
+    user = get_object_or_404(CustomUser, id=user_id)
+    user.delete()
+    messages.success(request, 'User deleted successfully.')
+    return redirect('admin_dashboard')
+
+
 
 @login_required
 def profile_view(request):
     return render(request, 'monitoring/profile.html', {'user': request.user})
 
-def admin_dashboard(request):
-    return render(request, 'monitoring/admin_dashboard.html')
 
 @login_required
 def room1(request):
