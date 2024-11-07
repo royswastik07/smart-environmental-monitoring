@@ -16,7 +16,7 @@
         <header>
             <div class="nav">
                 <div class="logo">
-                    <h1 style="color: white">AQ<span>-Index</span></h1>
+                    <h1 style="color: white">PS<span>-Guardian</span></h1>
                 </div>
                 <div class="links">
                     <a href="{% url 'index' %}">Home</a>
@@ -34,6 +34,7 @@
                             <a href="{% url 'room5' %}">Room 5</a>
                         </div>
                     </div>
+
 
                     {% if user.is_authenticated %}
                         <form action="{% url 'logout' %}" method="post" style="display: inline;">
@@ -59,76 +60,76 @@
             {% block content %}
             {% endblock %}
         </main>
-
-        <footer>
-            <style>
-                footer {
-                    width: 100%;
-                    text-align: center;
-                    color: white;
-                    padding: 20px;
-                }
-                footer h1 {
-                    font-weight: 400;
-                    font-size: 20px;
-                }
-
-                .profile-icon {
-                    display: inline-block;
-                    margin-left: 15px;
-                    vertical-align: middle;
-                }
-                .profile-pic {
-                    width: 35px;
-                    height: 35px;
-                    border-radius: 50%;
-                    object-fit: cover;
-                    border: 2px solid white;
-                }
-                .links a {
-                    color: white;
-                    text-decoration: none;
-                    padding: 0 10px;
-                }
-                .links a:hover {
-                    text-decoration: underline;
-                }
-
-                /* Dropdown styling */
-                .dropdown {
-                    position: relative;
-                    display: inline-block;
-                }
-                .dropbtn {
-                    color: white;
-                    text-decoration: none;
-                    padding: 0 10px;
-                }
-                .dropdown-content {
-                    display: none;
-                    position: absolute;
-                    background-color: #333;
-                    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                    z-index: 1;
-                    min-width: 100px;
-                }
-                .dropdown-content a {
-                    color: white;
-                    padding: 10px;
-                    text-decoration: none;
-                    display: block;
-                }
-                .dropdown-content a:hover {
-                    background-color: #555;
-                }
-                .dropdown:hover .dropdown-content {
-                    display: block;
-                }
-            </style>
-            <div id="ft">
-                <h1>Project : IoT Smart Environment Monitoring</h1>
-            </div>
-        </footer>
     </div>
+    
+    <footer>
+        <style>
+            footer {
+                width: 100%;
+                text-align: center;
+                color: white;
+                padding: 20px;
+            }
+            footer h1 {
+                font-weight: 400;
+                font-size: 20px;
+            }
+
+            .profile-icon {
+                display: inline-block;
+                margin-left: 15px;
+                vertical-align: middle;
+            }
+            .profile-pic {
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 2px solid white;
+            }
+            .links a {
+                color: white;
+                text-decoration: none;
+                padding: 0 10px;
+            }
+            .links a:hover {
+                text-decoration: underline;
+            }
+
+            /* Dropdown styling */
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+            .dropbtn {
+                color: white;
+                text-decoration: none;
+                padding: 0 10px;
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #333;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+                min-width: 100px;
+            }
+            .dropdown-content a {
+                color: white;
+                padding: 10px;
+                text-decoration: none;
+                display: block;
+            }
+            .dropdown-content a:hover {
+                background-color: #555;
+            }
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+        </style>
+        <div id="ft">
+            <h1>Project : IoT Smart Environment Monitoring</h1>
+        </div>
+    </footer>
 </body>
 </html>

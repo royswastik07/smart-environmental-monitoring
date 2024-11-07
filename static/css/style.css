@@ -97,7 +97,7 @@ header {
 
 .ht h1 {
     margin-left: 15px;
-    font-size: 130px;
+    font-size: 120px;
     font-family: "Oswald";
     background: url('https://img.freepik.com/free-photo/green-leaf-texture-leaf-texture-background_501050-120.jpg?w=996&t=st=1728289818~exp=1728290418~hmac=c0f633442e41aa98b6907bac9d9b44c5e8fcd809a0a28b1145e6670065ca3da3');
     -webkit-background-clip: text;
@@ -289,3 +289,31 @@ iframe {
     font-size: 24px;
     line-height: 26px;
 }
+
+
+/* Add these styles at the end of style.css */
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#hero-cont {
+    flex: 1;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    /*background-color: #333;*/
+    position: relative;
+}
+
+/*.wt-bg {
+    flex: 1;
+}*/
+
+
